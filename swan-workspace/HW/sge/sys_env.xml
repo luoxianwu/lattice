@@ -16,7 +16,7 @@
         </lattice:general>
         <lattice:ipInstances>
             <lattice:ipInstance>
-                <lattice:instanceName vendor="latticesemi.com" library="ip" name="riscv_mc" version="2.4.0">cpu0_inst</lattice:instanceName>
+                <lattice:instanceName vendor="latticesemi.com" library="ip" name="riscv_mc" version="2.6.0">cpu0_inst</lattice:instanceName>
                 <ipxact:addressSpaces>
                     <ipxact:addressSpace>
                         <ipxact:name>riscv_ahbl_m_data_Address_Space</ipxact:name>
@@ -107,6 +107,10 @@
                         <lattice:value>False</lattice:value>
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
+                        <lattice:name sequence_id="0">CFU_EN</lattice:name>
+                        <lattice:value>False</lattice:value>
+                    </lattice:configurableParameter>
+                    <lattice:configurableParameter>
                         <lattice:name sequence_id="0">DEBUG_ENABLE</lattice:name>
                         <lattice:value>True</lattice:value>
                     </lattice:configurableParameter>
@@ -159,6 +163,10 @@
                         <lattice:value>True</lattice:value>
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
+                        <lattice:name sequence_id="0">CFU_N_CFUS</lattice:name>
+                        <lattice:value>1</lattice:value>
+                    </lattice:configurableParameter>
+                    <lattice:configurableParameter>
                         <lattice:name sequence_id="0">C_EXT</lattice:name>
                         <lattice:value>True</lattice:value>
                     </lattice:configurableParameter>
@@ -184,14 +192,14 @@
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
                         <lattice:name sequence_id="0">DEVICE</lattice:name>
-                        <lattice:value>LIFCL</lattice:value>
+                        <lattice:value>LFD2NX</lattice:value>
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
                         <lattice:name sequence_id="0">JTAG_CHANNEL</lattice:name>
                         <lattice:value>14</lattice:value>
                     </lattice:configurableParameter>
                 </lattice:configurableParameters>
-                <lattice:driverVersion>null</lattice:driverVersion>
+                <lattice:driverVersion>2.5.0</lattice:driverVersion>
             </lattice:ipInstance>
             <lattice:ipInstance>
                 <lattice:instanceName vendor="latticesemi.com" library="ip" name="gpio" version="1.6.2">gpio0_inst</lattice:instanceName>
@@ -225,7 +233,7 @@
                 <lattice:driverVersion>1.6.2</lattice:driverVersion>
             </lattice:ipInstance>
             <lattice:ipInstance>
-                <lattice:instanceName vendor="latticesemi.com" library="ip" name="system_memory" version="2.0.0">sysmem0_inst</lattice:instanceName>
+                <lattice:instanceName vendor="latticesemi.com" library="ip" name="system_memory" version="2.2.0">sysmem0_inst</lattice:instanceName>
                 <ipxact:memoryMaps>
                     <ipxact:memoryMap>
                         <ipxact:name>ahbl_slv0_model_mem_map</ipxact:name>
@@ -263,19 +271,15 @@
                 <lattice:configurableParameters>
                     <lattice:configurableParameter>
                         <lattice:name sequence_id="0">FAMILY</lattice:name>
-                        <lattice:value>LIFCL</lattice:value>
+                        <lattice:value>LFD2NX</lattice:value>
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
                         <lattice:name sequence_id="0">TT_FAMILY</lattice:name>
                         <lattice:value>LIFCL</lattice:value>
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
-                        <lattice:name sequence_id="0">use_ecp5</lattice:name>
-                        <lattice:value>False</lattice:value>
-                    </lattice:configurableParameter>
-                    <lattice:configurableParameter>
-                        <lattice:name sequence_id="0">ecp5_family</lattice:name>
-                        <lattice:value>ECP5U</lattice:value>
+                        <lattice:name sequence_id="0">DEVICE</lattice:name>
+                        <lattice:value>LFD2NX-40</lattice:value>
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
                         <lattice:name sequence_id="0">INTERFACE</lattice:name>
@@ -326,12 +330,12 @@
                         <lattice:value>False</lattice:value>
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
-                        <lattice:name sequence_id="0">STREAMER_CLK_BYPASS</lattice:name>
-                        <lattice:value>False</lattice:value>
-                    </lattice:configurableParameter>
-                    <lattice:configurableParameter>
                         <lattice:name sequence_id="0">STREAMER_INTF</lattice:name>
                         <lattice:value>FIFO</lattice:value>
+                    </lattice:configurableParameter>
+                    <lattice:configurableParameter>
+                        <lattice:name sequence_id="0">STREAMER_CLK_BYPASS</lattice:name>
+                        <lattice:value>False</lattice:value>
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
                         <lattice:name sequence_id="0">STREAMER_START_ADDR</lattice:name>
@@ -347,6 +351,10 @@
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
                         <lattice:name sequence_id="0">INIT_FILE_FORMAT</lattice:name>
+                        <lattice:value>none</lattice:value>
+                    </lattice:configurableParameter>
+                    <lattice:configurableParameter>
+                        <lattice:name sequence_id="0">INIT_FILE_IN</lattice:name>
                         <lattice:value>none</lattice:value>
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
@@ -874,6 +882,10 @@
                         <lattice:value>True</lattice:value>
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
+                        <lattice:name sequence_id="0">READ_PIPELINE_S0</lattice:name>
+                        <lattice:value>False</lattice:value>
+                    </lattice:configurableParameter>
+                    <lattice:configurableParameter>
                         <lattice:name sequence_id="0">RESET_MODE_S0</lattice:name>
                         <lattice:value>sync</lattice:value>
                     </lattice:configurableParameter>
@@ -920,6 +932,10 @@
                     <lattice:configurableParameter>
                         <lattice:name sequence_id="0">REGMODE_S1</lattice:name>
                         <lattice:value>True</lattice:value>
+                    </lattice:configurableParameter>
+                    <lattice:configurableParameter>
+                        <lattice:name sequence_id="0">READ_PIPELINE_S1</lattice:name>
+                        <lattice:value>False</lattice:value>
                     </lattice:configurableParameter>
                     <lattice:configurableParameter>
                         <lattice:name sequence_id="0">RESET_MODE_S1</lattice:name>
@@ -972,7 +988,7 @@
                 </lattice:configurableParameters>
             </lattice:ipInstance>
             <lattice:ipInstance>
-                <lattice:instanceName vendor="latticesemi.com" library="ip" name="uart" version="1.3.0">uart0_inst</lattice:instanceName>
+                <lattice:instanceName vendor="latticesemi.com" library="ip" name="uart" version="1.4.0">uart0_inst</lattice:instanceName>
                 <ipxact:memoryMaps>
                     <ipxact:memoryMap>
                         <ipxact:name>uart_mem_map</ipxact:name>
@@ -1013,21 +1029,6 @@
         </lattice:ipInstances>
         <lattice:memoryRegions>
             <lattice:memoryRegion>
-                <lattice:name>sysmem0_inst_AHBL_S1</lattice:name>
-                <lattice:instanceName>sysmem0_inst</lattice:instanceName>
-                <lattice:editAddress>False</lattice:editAddress>
-                <lattice:startAddress>0</lattice:startAddress>
-                <lattice:addressSpace>32768</lattice:addressSpace>
-                <lattice:accessType>R/W</lattice:accessType>
-                <lattice:masterPorts>
-                    <lattice:masterPort>
-                        <lattice:name>cpu0_inst_AHBL_M1_DATA</lattice:name>
-                        <lattice:baseAddress>0x0</lattice:baseAddress>
-                        <lattice:range>0x8000</lattice:range>
-                    </lattice:masterPort>
-                </lattice:masterPorts>
-            </lattice:memoryRegion>
-            <lattice:memoryRegion>
                 <lattice:name>sysmem0_inst_AHBL_S0</lattice:name>
                 <lattice:instanceName>sysmem0_inst</lattice:instanceName>
                 <lattice:editAddress>False</lattice:editAddress>
@@ -1037,6 +1038,21 @@
                 <lattice:masterPorts>
                     <lattice:masterPort>
                         <lattice:name>cpu0_inst_AHBL_M0_INSTR</lattice:name>
+                        <lattice:baseAddress>0x0</lattice:baseAddress>
+                        <lattice:range>0x8000</lattice:range>
+                    </lattice:masterPort>
+                </lattice:masterPorts>
+            </lattice:memoryRegion>
+            <lattice:memoryRegion>
+                <lattice:name>sysmem0_inst_AHBL_S1</lattice:name>
+                <lattice:instanceName>sysmem0_inst</lattice:instanceName>
+                <lattice:editAddress>False</lattice:editAddress>
+                <lattice:startAddress>0</lattice:startAddress>
+                <lattice:addressSpace>32768</lattice:addressSpace>
+                <lattice:accessType>R/W</lattice:accessType>
+                <lattice:masterPorts>
+                    <lattice:masterPort>
+                        <lattice:name>cpu0_inst_AHBL_M1_DATA</lattice:name>
                         <lattice:baseAddress>0x0</lattice:baseAddress>
                         <lattice:range>0x8000</lattice:range>
                     </lattice:masterPort>
