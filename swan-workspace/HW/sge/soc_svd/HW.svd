@@ -210,7 +210,7 @@
     </peripheral>
     <peripheral>
           <name>gpio0_inst</name>
-          <version>1.6.1</version>
+          <version>1.6.2</version>
           <baseAddress>0x00008400</baseAddress>
           <groupName>gpio</groupName>
           <description></description>

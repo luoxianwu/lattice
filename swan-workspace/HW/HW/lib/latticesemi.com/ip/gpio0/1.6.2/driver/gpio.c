@@ -2,7 +2,7 @@
 
      >>>>>>>>>>>>>>>>>>>>>>> COPYRIGHT NOTICE <<<<<<<<<<<<<<<<<<<<<<<<<
      ------------------------------------------------------------------
-     Copyright (c) 2019-2024 by Lattice Semiconductor Corporation
+     Copyright (c) 2019-2023 by Lattice Semiconductor Corporation
      ALL RIGHTS RESERVED
      ------------------------------------------------------------------
 

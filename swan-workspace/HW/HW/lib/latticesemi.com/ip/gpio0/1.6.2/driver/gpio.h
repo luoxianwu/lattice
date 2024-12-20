@@ -2,7 +2,7 @@
 
      >>>>>>>>>>>>>>>>>>>>>>> COPYRIGHT NOTICE <<<<<<<<<<<<<<<<<<<<<<<<<
      ------------------------------------------------------------------
-     Copyright (c) 2019-2024 by Lattice Semiconductor Corporation
+     Copyright (c) 2019-2023 by Lattice Semiconductor Corporation
      ALL RIGHTS RESERVED
      ------------------------------------------------------------------
 
@@ -49,75 +49,46 @@
 
      ================================================================== */
 
-#include "gpio.h"
-#include "gpio_regs.h"
-#include "reg_access.h"
-#include <stddef.h>
+#ifndef __GPIO__
+#define __GPIO__
+
+#define GPIO_DRV_VER "v1.6.2"
+
+#include <stdint.h>
+
+//#define _DIRECTION_INTERNAL_MEMORY_USE_
+#define MAX_NUMBER_OF_GPIO	32
+
+enum gpio_direction {
+	GPIO_INPUT,
+	GPIO_OUTPUT
+};
+
+struct gpio_cfg {
+	uint32_t pin;
+#ifdef _DIRECTION_INTERNAL_MEMORY_USE_
+	enum gpio_direction direction;
+#endif
+};
+
+struct gpio_instance {
+	const char *instance_name;
+	uint32_t base_address;
+	struct gpio_cfg gpio_config[MAX_NUMBER_OF_GPIO];
+};
 
 unsigned char gpio_init(struct gpio_instance *this_gpio,
 		uint32_t base_addr,
-		uint32_t lines_num, uint32_t gpio_dirs)
-{
-	unsigned int index = 0;
-	if (NULL == this_gpio) {
-		return 1;
-	}
-	this_gpio->base_address = base_addr;
-
-	for (index = 0; index < lines_num; index++) {
-		this_gpio->gpio_config[index].pin = 0x01 << index;
-
-		if (gpio_dirs & (0x01 << index)) {
-			reg_32b_modify(this_gpio->base_address | GPIO_DIRECTION,
-					this_gpio->gpio_config[index].pin, (GPIO_OUTPUT << index));
-#ifdef _DIRECTION_INTERNAL_MEMORY_USE_
-			this_gpio->gpio_config[index].direction = GPIO_OUTPUT;
-#endif
-		} else {
-			reg_32b_modify(this_gpio->base_address | GPIO_DIRECTION,
-					this_gpio->gpio_config[index].pin, (GPIO_INPUT << index));
-#ifdef _DIRECTION_INTERNAL_MEMORY_USE_
-			this_gpio->gpio_config[index].direction = GPIO_INPUT;
-#endif
-		}
-	}
-	return 0;
-}
+		uint32_t lines_num, uint32_t gpio_dirs);
 
 unsigned char gpio_set_direction(struct gpio_instance *this_gpio,
-		uint32_t index, enum gpio_direction gpio_dir)
-{
-	if (NULL == this_gpio) {
-		return 1;
-	}
-
-	reg_32b_modify(this_gpio->base_address | GPIO_DIRECTION,
-			this_gpio->gpio_config[index].pin, (gpio_dir << index));
-#ifdef _DIRECTION_INTERNAL_MEMORY_USE_
-	this_gpio->gpio_config[index].direction = gpio_dir;
-#endif
-	return 0;
-}
+		uint32_t index,
+		enum gpio_direction gpio_dir);
 
 unsigned char gpio_output_write(struct gpio_instance *this_gpio,
-		uint32_t index, uint32_t value)
-{
-	if (NULL == this_gpio) {
-		return 1;
-	}
-
-	reg_32b_modify(this_gpio->base_address | GPIO_WR_DATA,
-			this_gpio->gpio_config[index].pin, value);
-
-	return 0;
-}
+		uint32_t index, uint32_t value);
 
 unsigned char gpio_input_get(struct gpio_instance *this_gpio,
-		uint32_t index, uint32_t *data)
-{
-	if (NULL == this_gpio) {
-		return 1;
-	}
-	reg_32b_read(this_gpio->base_address | GPIO_RD_DATA, data);
-	return 0;
-}
+		uint32_t index, uint32_t *data);
+
+#endif

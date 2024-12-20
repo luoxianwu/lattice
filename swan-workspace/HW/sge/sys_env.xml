@@ -194,7 +194,7 @@
                 <lattice:driverVersion>null</lattice:driverVersion>
             </lattice:ipInstance>
             <lattice:ipInstance>
-                <lattice:instanceName vendor="latticesemi.com" library="ip" name="gpio" version="1.6.1">gpio0_inst</lattice:instanceName>
+                <lattice:instanceName vendor="latticesemi.com" library="ip" name="gpio" version="1.6.2">gpio0_inst</lattice:instanceName>
                 <ipxact:memoryMaps>
                     <ipxact:memoryMap>
                         <ipxact:name>gpio_mem_map</ipxact:name>
@@ -222,7 +222,7 @@
                 <lattice:structName>gpio_instance</lattice:structName>
                 <lattice:initName>gpio_init</lattice:initName>
                 <lattice:headerFile>gpio.h</lattice:headerFile>
-                <lattice:driverVersion>null</lattice:driverVersion>
+                <lattice:driverVersion>1.6.2</lattice:driverVersion>
             </lattice:ipInstance>
             <lattice:ipInstance>
                 <lattice:instanceName vendor="latticesemi.com" library="ip" name="system_memory" version="2.0.0">sysmem0_inst</lattice:instanceName>

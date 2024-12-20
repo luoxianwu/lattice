@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<RadiantModule architecture="jd5s00" date="2024 12 20 12:40:20" device="LFD2NX-40" device_int="jd5s30" family="LFD2NX" gen_platform="Propel" gen_platform_version="2024.1.2406150513_p" generator="ipgen" library="ip" module="gpio" name="gpio0" operation="Commercial" package="CABGA256" package_int="CABGA256" partnumber="LFD2NX-40-8BG256C" source_format="Verilog" speed="8_High-Performance_1.0V" speed_int="11" vendor="latticesemi.com" version="1.6.2">
+ <Package>
+  <File modified="2024 12 20 12:40:20" name="rtl/gpio0_bb.v" type="black_box_verilog"/>
+  <File modified="2024 12 20 12:40:20" name="gpio0.cfg" type="cfg"/>
+  <File modified="2024 12 20 12:40:20" name="misc/gpio0_tmpl.v" type="template_verilog"/>
+  <File modified="2024 12 20 12:40:20" name="misc/gpio0_tmpl.vhd" type="template_vhdl"/>
+  <File modified="2024 12 20 12:40:20" name="rtl/gpio0.v" type="top_level_verilog"/>
+  <File modified="2024 12 20 12:40:20" name="testbench/dut_params.v" type="dependency_file"/>
+  <File modified="2024 12 20 12:40:20" name="testbench/dut_inst.v" type="dependency_file"/>
+  <File modified="2024 12 20 12:40:20" name="component.xml" type="IP-XACT_component"/>
+  <File modified="2024 12 20 12:40:20" name="design.xml" type="IP-XACT_design"/>
+  <File modified="2023 10 23 20:17:39" name="testbench/lscc_lmmi2apb.v" type="testbench_verilog"/>
+  <File modified="2023 10 23 20:17:39" name="testbench/tb_top.v" type="testbench_verilog"/>
+  <File modified="2023 10 23 20:17:39" name="driver/gpio.c" type="driver_source"/>
+  <File modified="2023 10 23 20:17:39" name="driver/gpio.h" type="driver_header"/>
+  <File modified="2023 10 23 20:17:39" name="driver/gpio.xml" type="driver_metadata"/>
+  <File modified="2023 10 23 20:17:39" name="driver/gpio_regs.h" type="driver_header"/>
+ </Package>
+</RadiantModule>

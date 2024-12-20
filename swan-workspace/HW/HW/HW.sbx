@@ -146,7 +146,7 @@
             </ipxact:componentInstance>
             <ipxact:componentInstance>
                 <ipxact:instanceName>gpio0_inst</ipxact:instanceName>
-                <ipxact:componentRef vendor="latticesemi.com" library="ip" name="gpio0" version="1.6.1" />
+                <ipxact:componentRef vendor="latticesemi.com" library="ip" name="gpio0" version="1.6.2" />
             </ipxact:componentInstance>
             <ipxact:componentInstance>
                 <ipxact:instanceName>osc0_inst</ipxact:instanceName>
@@ -1144,7 +1144,7 @@
         <ipxact:vendor>latticesemi.com</ipxact:vendor>
         <ipxact:library>ip</ipxact:library>
         <ipxact:name>gpio0</ipxact:name>
-        <ipxact:version>1.6.1</ipxact:version>
+        <ipxact:version>1.6.2</ipxact:version>
         <ipxact:busInterfaces>
             <ipxact:busInterface>
                 <ipxact:name>APB_S0</ipxact:name>
@@ -1271,7 +1271,7 @@
                 </ipxact:componentInstantiation>
                 <ipxact:designInstantiation>
                     <ipxact:name>gpio0_design</ipxact:name>
-                    <ipxact:designRef vendor="latticesemi.com" library="ip" name="gpio0" version="1.6.1" />
+                    <ipxact:designRef vendor="latticesemi.com" library="ip" name="gpio0" version="1.6.2" />
                 </ipxact:designInstantiation>
             </ipxact:instantiations>
             <ipxact:ports>
@@ -1396,7 +1396,7 @@
                 <ipxact:name>IP</ipxact:name>
                 <ipxact:group>ip</ipxact:group>
                 <ipxact:file>
-                    <ipxact:name>./lib/latticesemi.com/ip/gpio0/1.6.1/component.xml</ipxact:name>
+                    <ipxact:name>./lib/latticesemi.com/ip/gpio0/1.6.2/component.xml</ipxact:name>
                     <ipxact:fileType user="xml">user</ipxact:fileType>
                 </ipxact:file>
             </ipxact:fileSet>
@@ -1420,7 +1420,7 @@
             </ipxact:parameter>
             <ipxact:parameter>
                 <ipxact:name>FAMILY</ipxact:name>
-                <ipxact:value>LIFCL</ipxact:value>
+                <ipxact:value>LFD2NX</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter>
                 <ipxact:name>IF_USER_INTF</ipxact:name>
@@ -1432,23 +1432,25 @@
             </ipxact:parameter>
             <ipxact:parameter>
                 <ipxact:name>IO_OUT_DEF_VAL</ipxact:name>
-                <ipxact:value>0000 0000</ipxact:value>
+                <ipxact:value>1010 1010</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter>
                 <ipxact:name>OUT_RESET_VAL</ipxact:name>
-                <ipxact:value>32&apos;h00000000</ipxact:value>
+                <ipxact:value>32&apos;h000000AA</ipxact:value>
             </ipxact:parameter>
             <ipxact:parameter>
                 <ipxact:name>OUT_RESET_VAL_INPUT</ipxact:name>
-                <ipxact:value>0</ipxact:value>
+                <ipxact:value>AA</ipxact:value>
             </ipxact:parameter>
         </ipxact:parameters>
         <ipxact:vendorExtensions>
-            <lsccip:moduleRef lsccip:library="ip" lsccip:name="gpio" lsccip:vendor="latticesemi.com" lsccip:version="1.6.1" />
+            <lsccip:moduleRef lsccip:library="ip" lsccip:name="gpio" lsccip:vendor="latticesemi.com" lsccip:version="1.6.2" />
             <lsccip:deviceInfo>
-                <lsccip:device>LIFCL-40</lsccip:device>
-                <lsccip:architecture>LIFCL</lsccip:architecture>
-                <lsccip:package>CABGA400</lsccip:package>
+                <lsccip:device>LFD2NX-40</lsccip:device>
+                <lsccip:architecture>jd5s00</lsccip:architecture>
+                <lsccip:package>CABGA256</lsccip:package>
+                <lsccip:family>LFD2NX</lsccip:family>
+                <lsccip:operation>Commercial</lsccip:operation>
             </lsccip:deviceInfo>
             <lattice:radiant>2024.1.0.29.0</lattice:radiant>
         </ipxact:vendorExtensions>
@@ -22422,9 +22424,9 @@
             <lsccip:moduleRef lsccip:library="glue_logic" lsccip:name="equation" lsccip:vendor="1.0.0" lsccip:version="latticesemi" />
             <lsccip:deviceInfo />
             <lsccip:logicInfo>
-                <lsccip:logicSymbol>BOOL  O &quot; (A &amp; B)  &#x0A;&quot;</lsccip:logicSymbol>
+                <lsccip:logicSymbol>BOOL O &quot; (A &amp; B) &#x0A;&quot;</lsccip:logicSymbol>
                 <lsccip:logicRtl>assign &lt;pin:O&gt; = (&lt;pin:A&gt; &amp; &lt;pin:B&gt;) ; &#x0A;</lsccip:logicRtl>
-                <lsccip:logicCfg>{&#x0A;    &quot;expr&quot;: &quot;A &amp; B&quot;,&#x0A;    &quot;module_name&quot;: &quot;equation_module0&quot;&#x0A;}&#x0A;</lsccip:logicCfg>
+                <lsccip:logicCfg>{&#x0A; &quot;expr&quot;: &quot;A &amp; B&quot;,&#x0A; &quot;module_name&quot;: &quot;equation_module0&quot;&#x0A;}&#x0A;</lsccip:logicCfg>
             </lsccip:logicInfo>
             <lattice:radiant>2024.1.0.29.0</lattice:radiant>
         </ipxact:vendorExtensions>

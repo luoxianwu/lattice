@@ -52,34 +52,43 @@
 #ifndef __GPIO__
 #define __GPIO__
 
+#define GPIO_DRV_VER "v1.6.2"
+
+#include <stdint.h>
+
+//#define _DIRECTION_INTERNAL_MEMORY_USE_
+#define MAX_NUMBER_OF_GPIO	32
+
 enum gpio_direction {
 	GPIO_INPUT,
 	GPIO_OUTPUT
 };
 
 struct gpio_cfg {
-	unsigned int pin;
+	uint32_t pin;
+#ifdef _DIRECTION_INTERNAL_MEMORY_USE_
 	enum gpio_direction direction;
+#endif
 };
 
 struct gpio_instance {
 	const char *instance_name;
-	unsigned int base_address;
-	struct gpio_cfg gpio_config[32];
+	uint32_t base_address;
+	struct gpio_cfg gpio_config[MAX_NUMBER_OF_GPIO];
 };
 
 unsigned char gpio_init(struct gpio_instance *this_gpio,
-			unsigned int base_addr,
-			unsigned int lines_num, unsigned int gpio_dirs);
+		uint32_t base_addr,
+		uint32_t lines_num, uint32_t gpio_dirs);
 
 unsigned char gpio_set_direction(struct gpio_instance *this_gpio,
-				 unsigned int index,
-				 unsigned int gpio_dir);
+		uint32_t index,
+		enum gpio_direction gpio_dir);
 
 unsigned char gpio_output_write(struct gpio_instance *this_gpio,
-				unsigned int index, unsigned int value);
+		uint32_t index, uint32_t value);
 
 unsigned char gpio_input_get(struct gpio_instance *this_gpio,
-			    unsigned int index, unsigned int *data);
+		uint32_t index, uint32_t *data);
 
 #endif
