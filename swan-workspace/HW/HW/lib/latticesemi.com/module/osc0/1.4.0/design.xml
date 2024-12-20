@@ -21,8 +21,8 @@
                     <ipxact:configurableElementValue referenceId="HF_SED_SEC_DIV">1</ipxact:configurableElementValue>
                     <ipxact:configurableElementValue referenceId="SEDSEC_CLK_FREQ">225.0</ipxact:configurableElementValue>
                     <ipxact:configurableElementValue referenceId="LMMI_CLK_EN">DISABLED</ipxact:configurableElementValue>
-                    <ipxact:configurableElementValue referenceId="FAMILY">LIFCL</ipxact:configurableElementValue>
-                    <ipxact:configurableElementValue referenceId="DEVICE">LIFCL-40</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="FAMILY">LFD2NX</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="DEVICE">LFD2NX-40</ipxact:configurableElementValue>
                 </ipxact:configurableElementValues>
             </ipxact:componentRef>
         </ipxact:componentInstance>
@@ -103,6 +103,13 @@
             <ipxact:tiedValue>open</ipxact:tiedValue>
             <ipxact:portReferences>
                 <ipxact:internalPortReference componentRef="osc0" portRef="cfg_clk_o"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>osc0.smclk_rst_o</ipxact:name>
+            <ipxact:tiedValue>open</ipxact:tiedValue>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="osc0" portRef="smclk_rst_o"/>
             </ipxact:portReferences>
         </ipxact:adHocConnection>
         <ipxact:adHocConnection>

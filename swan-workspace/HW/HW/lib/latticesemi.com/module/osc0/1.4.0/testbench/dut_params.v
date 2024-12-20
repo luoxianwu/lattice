@@ -7,8 +7,8 @@ localparam SEDCLK_EN = 0;
 localparam HF_SED_SEC_DIV_DEC = 2;
 localparam HF_SED_SEC_DIV = "1";
 localparam LMMI_CLK_EN = "DISABLED";
-localparam FAMILY = "LIFCL";
-localparam DEVICE = "LIFCL-40";
-`define LIFCL
-`define je5d00
-`define LIFCL-40
+localparam FAMILY = "LFD2NX";
+localparam DEVICE = "LFD2NX-40";
+`define jd5s00
+`define LFD2NX
+`define LFD2NX_40
