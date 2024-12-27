@@ -150,6 +150,8 @@ int main(void) {
 		} else {
 			delay(500);
 		}
+
+		printf("Started!\nHello RISC-V world!\n");
 	}
 
 	return 0;
